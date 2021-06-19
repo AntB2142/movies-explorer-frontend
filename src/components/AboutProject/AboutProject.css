@@ -1,0 +1,161 @@
+.about-project {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 110px 0;
+}
+.about__title-block {
+    border-bottom: 1px solid #dadada;
+  }
+
+.about__title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1.18;
+    margin: 23px 0;
+  }
+
+.project {
+    width: 100%;
+    margin: 70px 0 110px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.project-card {
+    width: max-content;
+    margin: 0 40px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card:last-of-type {
+    margin: 0;
+}
+
+.project-card__title {
+    width: 100%;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    
+    color: #FFFFFF;
+    margin: 0 0 25px;
+}
+
+.project-card__description {
+    width: 100%;
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;    
+    color: #FFFFFF;
+}
+
+.project-duration {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.project-duration__container_backend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    width: calc(100% / 4);
+}
+
+.project-duration__container_frontend {
+    width: calc((100% / 4) * 3);
+}
+
+.project-duration__weeks {
+    width: 100%;
+    padding: 9px 0;
+    background: #3DDC84;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    margin: 0;
+    color: #000000;
+}
+
+.project-duration__weeks_grey {
+    color: #FFFFFF;
+    background: #303030;
+}
+
+.project-duration__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;  
+    color: #A0A0A0;
+}
+
+@media screen and (max-width: 1279px) {
+    .about-project {
+        width: calc(100% - 60px);
+        padding: 90px 0;
+    }
+
+    .project {
+        margin: 70px 0 90px;
+    }
+
+    .project-card {
+        width: max-content;
+    }
+    
+    .project-card__description {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-project {
+        width: calc(100% - 36px);
+        margin: 0 auto;
+        padding: 70px 0;
+    }
+
+    .ptoject {
+        margin: 60px 0;
+        flex-direction: column;
+    }
+
+    .project-card {
+        width: max-content;
+        width: 100%;
+        margin-bottom: 55px;
+    }
+
+    .project-card__title {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0 0 16px;
+    }
+    
+    .project-card__description {
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .project-duration__weeks {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .project-duration__title {
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
