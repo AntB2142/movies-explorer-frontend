@@ -1,0 +1,154 @@
+.techs {
+    width: 100%;
+    padding: 100px 0;
+    background: #272727;
+}
+
+.techs-section {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.techs__title-block {
+    border-bottom: 1px solid #dadada;
+  }
+
+.techs__title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1.18;
+    margin: 23px 0;
+  }
+
+.techs-section__text-wrapper {
+    margin: 90px auto 100px;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.techs-section__heading {
+    width: max-content;
+    margin: 0 auto 25px;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 58px;
+    /* identical to box height, or 116% */
+    
+    text-align: center;
+    letter-spacing: -0.04em;
+    
+    color: #FFFFFF;
+}
+
+.techs-section__subtitle {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+    
+    text-align: center;
+    letter-spacing: -0.04em;
+    
+    color: #FFFFFF;
+    margin: 0;
+    width: 460px;
+}
+
+.techsList {
+    width: 690px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.techsList__elem {
+    width: 90px;
+    height: 60px;
+    background: #303030;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.04em;
+    
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 1200px) {
+    .techs {
+        padding: 90px 0;
+    }
+
+    .techs-section {
+        width: calc(100% - 60px);
+    }
+
+    .techs-section__subtitle {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .techs-section__text-wrapper {
+        margin: 80px auto;
+    }
+
+    .techsList {
+        width: 650px;
+    }
+
+    .techsList__elem {
+        width: 84px;
+        height: 57px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .techs-section {
+        width: calc(100% - 36px);
+    }
+
+    .techs {
+        padding: 70px 0;
+    }
+
+    .techs-section__heading {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .techs-section__subtitle {
+        font-size: 11px;
+        line-height: 16px;
+        width: 292px;
+    }
+
+    .techs-section__text-wrapper {
+        margin: 60px auto 50px;
+    }
+
+    .techsList {
+        width: max-content;
+        display: grid;
+        grid-template-columns: repeat(2, 84px);
+        grid-gap: 10px;
+    }
+    
+
+    .techsList__elem {
+        width: 84px;
+        height: 57px;
+    }
+
+}

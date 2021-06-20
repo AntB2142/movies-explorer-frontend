@@ -1,0 +1,127 @@
+.profile {
+    width: 100%;
+    height: calc(100vh - 144px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 0 0;
+}
+
+.profile__info-wrapper {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.profile__heading {
+    width: max-content;
+    margin: 0 auto 125px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+.profile__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    padding: 0;
+    list-style: none;
+}
+
+.profile__elem {
+    width: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto 15px;
+    padding: 0 0 15px;
+    border-bottom: 1px solid #424242;
+}
+
+.profile__elem:last-of-type {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.profile__data {
+    width: max-content;
+    margin: 0;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+.profile__field {
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    text-align: right;
+    line-height: 13px;
+    padding: 0;
+    font-size: 11px;
+    border-radius: 10px;
+  }
+.profile__buttons {
+    width: max-content;
+    margin: 0 auto 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile__button {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: max-content;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 0 15px;
+}
+
+.profile__button_red {
+    color: #EE3465;
+    margin: 0;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 1279px) {
+    .profile {
+        justify-content: flex-start;
+    }
+
+    .profile__buttons {
+        margin: 210px auto 0;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .profile {
+        justify-content: space-between;
+    }
+    .profile__elem {
+        width: 260px;
+    }
+    .profile__buttons {
+        margin: 0 auto 40px;
+    }
+}

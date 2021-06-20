@@ -1,0 +1,140 @@
+.searchform {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 68px 0 50px;
+  }
+  
+  .searchform__input-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    border-bottom: #424242 1px solid;
+    margin-bottom: 30px;
+  }
+  
+  .searchform__input {
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 28px;
+  }
+  
+  .searchform__button {
+    font-size: 11px;
+    line-height: 18px;
+    padding: 8px 10px;
+    background-color: #4285f4;
+    border: none;
+    color: #ffffff;
+    border-radius: 48px;
+    cursor: pointer;
+  }
+
+  .link:hover {
+    transition: opacity 0.3s linear;
+    opacity: 0.6;
+  }
+  
+  .searchform__switch {
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 36px; 
+    height: 20px;
+    align-self: center;
+  }
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px; 
+    left: 2px;
+    bottom: 2px;
+    background-color: #ffffff;
+  border-radius: 50%;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #3DDC84;
+  }
+  
+  input:focus + .slider {
+    box-shadow:none;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(100%);
+  }
+  
+  .slider.round {
+   border-radius: 34px; 
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .searchform__shorts {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 0 12px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .searchform {
+      margin: 86px 0 62px;
+    }
+    .searchform__shorts {
+      font-size: 11px;
+    }
+    .searchform__input {
+      width: calc(100% - 53px);
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .searchform {
+      margin: 80px 0 51px;
+    }
+    .searchform__input {
+      text-align: left;
+      font-size: 18px;
+    }
+    .searchform__search-icon {
+      display: none;
+    }
+  }

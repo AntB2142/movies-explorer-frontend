@@ -1,0 +1,11 @@
+@import url(./vendor/fonts/fonts.css);
+@import url(./vendor/normalize.css);
+
+html, body, #root {
+  margin: 0;
+  font-family: 'Inter', 'sans-serif';
+  font-style: normal;
+  padding: 0;
+}
+
+
