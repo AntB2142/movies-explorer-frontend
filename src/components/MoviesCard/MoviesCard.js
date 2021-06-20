@@ -14,7 +14,7 @@ function MoviesCard() {
                 <p className='movies-card__time'>1ч 42м</p>
            </div>
            <button
-              className={`movies-card__save movies-card__save_saved ${
+              className={`movies-card__save ${
                 location.pathname === '/saved-movies' && 'movies-card__save_remove'
               }`}
               type='button'

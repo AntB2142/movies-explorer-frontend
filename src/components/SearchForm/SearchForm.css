@@ -35,6 +35,11 @@
     border-radius: 48px;
     cursor: pointer;
   }
+
+  .link:hover {
+    transition: opacity 0.3s linear;
+    opacity: 0.6;
+  }
   
   .searchform__switch {
     font-size: 14px;
@@ -128,5 +133,8 @@
     .searchform__input {
       text-align: left;
       font-size: 18px;
+    }
+    .searchform__search-icon {
+      display: none;
     }
   }
