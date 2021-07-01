@@ -1,36 +1,47 @@
 import Auth from '../Auth/Auth';
 
-function Register({ onRegister }) {
+import { useFormWithValidation } from '../../hooks/useFormWithValidation';
+import { SIGNIN_PAGE, SIGNUP_PAGE } from '../../utils/constants';
+import Preloader from '../Preloader/Preloader';
+
+function Register({ onRegister, errorMessage, loader }) {
+  const { inputValues, handleChange, errors, isValid } = useFormWithValidation();
+
   function handleSubmit(e) {
     e.preventDefault();
-    onRegister();
+    onRegister(inputValues);
   }
+
 
   return (
     <Auth
-      title='Добро пожаловать!'
-      button='Зарегистрироваться'
-      handleSubmit={handleSubmit}
-      text='Уже зарегистрированы?'
-      linkText='Войти'
-      linkTo='/signin'
-      path='/signup'
+    title='Добро пожаловать!'
+    button='Зарегистрироваться'
+    handleSubmit={handleSubmit}
+    text='Уже зарегистрированы?'
+    linkText='Войти'
+    linkTo={SIGNIN_PAGE}
+    path={SIGNUP_PAGE}
+    isDisabled={!isValid}
+    errorMessage={errorMessage}
     >
+      {loader && <Preloader />}
       <label className='auth__label'>
         <p className='auth__input-title'>Имя</p>
         <input
           id='name__input'
           type='text'
           name='name'
-          defaultValue=''
-          placeholder='Ваше имя?'
+          value={inputValues.name || ''}
+          placeholder='Как вас зовут?'
           className='auth__field'
           minLength='2'
           maxLength='200'
           required
+          onChange={handleChange}
         />
-        <span id='auth__input-error' className='auth__input-error-text auth__input-err_hidden'>
-         Неправильные данные...
+        <span id='auth__input-error' className='auth__input-error-text'>
+          {errors.name}
         </span>
       </label>
 
@@ -40,14 +51,16 @@ function Register({ onRegister }) {
           id='email__input'
           type='email'
           name='email'
+          value={inputValues.email || ''}
           placeholder='E-mail'
           className='auth__field'
           minLength='1'
           maxLength='40'
           required
+          onChange={handleChange}
         />
-        <span id='auth__input-error' className='auth__input-error-text auth__input-err_hidden'>
-         Неправильные данные...
+        <span id='auth__input-error' className='auth__input-error-text'>
+          {errors.email}
         </span>
       </label>
       <label className='auth__label'>
@@ -56,15 +69,16 @@ function Register({ onRegister }) {
           id='password__input'
           type='password'
           name='password'
-          defaultValue=''
+          value={inputValues.password || ''}
           placeholder='Пароль'
           className='auth__field auth__input-error'
-          minLength='2'
-          maxLength='200'
+          minLength='3'
+          maxLength='20'
           required
+          onChange={handleChange}
         />
         <span id='auth__input-error' className='auth__input-error-text'>
-        Неправильные данные...
+          {errors.password}
         </span>
       </label>
     </Auth>

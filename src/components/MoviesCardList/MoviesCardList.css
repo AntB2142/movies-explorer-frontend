@@ -5,7 +5,43 @@
     justify-content: center;
    
   }
+  .movies-card__no-search-results {
+    display: contents;
+  }
   
+  .movies-card__no-search-results_hidden {
+    display: none;
+  }
+  
+  .movies-card__no-search-results-text {
+    margin: 0;
+    font-size: 22px;
+    line-height: 28px;
+    color: #8b8b8b;
+    text-align: center;
+  }
+  
+  .movies__more-films {
+    width: calc(100% - 60px);
+  margin: auto;
+  display: flex;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    padding: 11px 70px 9px;
+    background-color: rgba(47, 47, 47, 1);
+    border: 0;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 6px;
+    justify-content: center;
+  }
+  
+  .movies__more-fils:hover { 
+    cursor: pointer;
+    opacity: .8;
+  }
   @media screen and (max-width: 1279px) {
     .movies-list {
      
@@ -18,5 +54,9 @@
     .movies-list {
       grid-template-columns: max-content;
       gap: 30px;
+    }
+    .movies__more-films {
+      width: calc(100% - 28px);
+      padding: 11px 20px 9px;
     }
   }

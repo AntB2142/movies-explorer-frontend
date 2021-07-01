@@ -1,211 +1,57 @@
 import './MoviesCard.css';
 import { useLocation } from 'react-router-dom';
-import movieImg from '../../images/MovieImg.svg';
+import { useEffect, useState } from 'react';
 
-function MoviesCard() {
-    let location = useLocation();
+function MoviesCard({ movieCard, handleSaveMovie, savedMoviesList }) {
+  const location = useLocation();
+
+  const { nameRU, trailerLink, image, duration } = movieCard;
+  const [movieIsSaved, setMovieIsSaved] = useState(false);
+  const movieDuration = `${Math.floor(duration / 60)}ч ${duration % 60}м`;
+
+  function onSaveMovieClick() {
+    handleSaveMovie(movieCard);
+  }
+
+  function checkLike(savedMoviesList, movieCard) {
+    return savedMoviesList.some((el) => el.nameRU === movieCard.nameRU);
+  }
+
+  useEffect(() => {
+    const result = checkLike(savedMoviesList, movieCard);
+    setMovieIsSaved(result);
+  }, [savedMoviesList, movieCard]);
   
     return (
-        <>
+    <>
     <div className='movies-card'>
        <div className='movies-card__container'>
            <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
+                <h2 className='movies-card__name'>{nameRU}</h2>
+                <p className='movies-card__time'>{movieDuration}</p>
            </div>
            <button
-              className={`movies-card__save ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
+            className={`movies-card__save ${movieIsSaved && 'movies-card__save_saved'}  link ${
+              location.pathname === '/saved-movies' && 'movies-card__save_remove'
+            }`}
+            type='button'
+            onClick={onSaveMovieClick}
+          ></button>
        </div>
        <a
             className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
+            href={trailerLink || movieCard.trailer}
             target='_blank'
             rel='noreferrer'
           >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
+            <img 
+            className='movies-card__trailer' 
+            src={`${image.url || image}`}
+            alt={`Трейлер фильма ${nameRU}`}
+            />
           </a>
     </div>
-    <div className='movies-card'>
-       <div className='movies-card__container'>
-           <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
-           </div>
-           <button
-              className={`movies-card__save movies-card__save_saved ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
-       </div>
-       <a
-            className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
-          </a>
-    </div>
-    <div className='movies-card'>
-       <div className='movies-card__container'>
-           <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
-           </div>
-           <button
-              className={`movies-card__save movies-card__save_saved ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
-       </div>
-       <a
-            className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
-          </a>
-    </div>
-    <div className='movies-card'>
-       <div className='movies-card__container'>
-           <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
-           </div>
-           <button
-              className={`movies-card__save movies-card__save_saved ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
-       </div>
-       <a
-            className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
-          </a>
-    </div>
-    <div className='movies-card'>
-       <div className='movies-card__container'>
-           <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
-           </div>
-           <button
-              className={`movies-card__save movies-card__save_saved ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
-       </div>
-       <a
-            className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
-          </a>
-    </div>
-    <div className='movies-card'>
-       <div className='movies-card__container'>
-           <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
-           </div>
-           <button
-              className={`movies-card__save movies-card__save_saved ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
-       </div>
-       <a
-            className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
-          </a>
-    </div>
-    <div className='movies-card'>
-       <div className='movies-card__container'>
-           <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
-           </div>
-           <button
-              className={`movies-card__save movies-card__save_saved ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
-       </div>
-       <a
-            className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
-          </a>
-    </div>
-    <div className='movies-card'>
-       <div className='movies-card__container'>
-           <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
-           </div>
-           <button
-              className={`movies-card__save movies-card__save_saved ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
-       </div>
-       <a
-            className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
-          </a>
-    </div>
-    <div className='movies-card'>
-       <div className='movies-card__container'>
-           <div className='movies-card__description'>
-                <h2 className='movies-card__name'>33 слова о дизайне</h2>
-                <p className='movies-card__time'>1ч 42м</p>
-           </div>
-           <button
-              className={`movies-card__save movies-card__save_saved ${
-                location.pathname === '/saved-movies' && 'movies-card__save_remove'
-              }`}
-              type='button'
-            ></button>
-       </div>
-       <a
-            className='movies-card__trailer_link'
-            href='https://youtu.be/Cz5q05Hl5gs'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img className='movies-card__trailer' src={movieImg} alt='Трейлер фильма' />
-          </a>
-    </div>
-</>
+    </>
   );
 }
 

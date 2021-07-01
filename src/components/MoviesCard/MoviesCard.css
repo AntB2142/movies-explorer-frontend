@@ -24,7 +24,6 @@
   }
   
   .movies-card__name {
-    width: max-content;
     margin: 0 0 9px;
     padding: 0;
     font-weight: 500;
@@ -68,6 +67,7 @@
   
   .movies-card__save_remove {
     background-image: url('../../images/remove.svg');
+    
   }
 
   .movies-card__trailer {

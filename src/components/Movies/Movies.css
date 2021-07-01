@@ -4,23 +4,7 @@
   display: flex;
   flex-direction: column;
   }
-  .movies__more-films {
-    margin-top: 50px;
-    margin-bottom: 80px;
-    padding: 11px 70px 9px;
-    background-color: rgba(47, 47, 47, 1);
-    border: 0;
-    color: rgba(255, 255, 255, 1);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    border-radius: 6px;
-  }
   
-  .movies__more-fils:hover { 
-    cursor: pointer;
-    opacity: .8;
-  }
   
   @media screen and (max-width: 1280px) {
     .movies {
@@ -37,10 +21,5 @@
   @media screen and (max-width: 320px) {
     .movies {
       width: calc(100% - 20px);
-    }
-  
-    .movies__more-films {
-      min-width: 240px;
-      padding: 11px 20px 9px;
     }
   }

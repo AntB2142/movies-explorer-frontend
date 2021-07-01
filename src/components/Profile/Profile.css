@@ -96,7 +96,16 @@
     cursor: pointer;
     margin: 0 0 15px;
 }
-
+.profile__input-error-text {
+    font-size: 10px;
+    line-height: 12px;
+    color: #ee3465;
+    padding-top: 10px;
+  }
+  
+  .profile__input-err_hidden {
+    display: none;
+  }
 .profile__button_red {
     color: #EE3465;
     margin: 0;
