@@ -1,0 +1,9 @@
+export const NO_SEARCH_RESULTS = 'Ничего не найдено';
+export const USER_ALREADY_EXISTS = 'Пользователь уже существует';
+export const INVALID_AUTH_DATA = 'Неверный логин или пароль';
+export const SERVER_ERROR = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз';
+export const USER_DATA_SUCCESSFULLY_UPDATED = 'Данные успешно обновлены';
+export const SUCCESS_REGISTRATION = 'Вы успешно зарегистрировались!';
+export const SUCCESS_AUTHORIZATION = 'Вы успешно авторизировались!';
+export const SOMETHING_WENT_WRONG = 'Что-то пошло не так! Попробуйте еще раз.'
+export const NO_SHORT_MOVIES_RESULTS = 'Короткометражных фильмов нет';

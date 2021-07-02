@@ -61,6 +61,11 @@
   .auth__input-error {
     color: #ee3465;
   }
+
+  .auth__error-message {
+    color: #ee3465;
+    text-align: center;
+  }
   
   .auth__input-error-text {
     display: inline-block;

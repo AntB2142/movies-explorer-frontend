@@ -1,22 +1,62 @@
+import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import './SearchForm.css';
 import searchIcon from '../../images/search-icon.svg';
+import { useFormWithValidation } from '../../hooks/useFormWithValidation';
+import { useEffect, useState } from 'react';
 
-function SearchForm() {
+function SearchForm({ handleSearchClick, toggleShortMovieFilter }) {
+    const { inputValues, handleChange } = useFormWithValidation();
+    const [errorMessage, setErrorMessage] = useState('');
+    const searchQuery = inputValues.name;
+  
+    function handleSubmit(e) {
+      e.preventDefault();
+  
+      if (searchQuery) {
+        handleSearchClick(searchQuery);
+        hideErrorMessage();
+      } else {
+        showErrorMessage();
+      }
+    }
+  
+    useEffect(() => {
+      if (searchQuery !== '') {
+        hideErrorMessage();
+      } else {
+        showErrorMessage();
+      }
+    }, [searchQuery]);
+  
+    function hideErrorMessage() {
+      setErrorMessage('');
+    }
+  
+    function showErrorMessage() {
+      setErrorMessage('Нужно ввести ключевое слово');
+    }
+  
     return (
         <form className='searchform'>
-            <div className='searchform__input-wrapper'>
+            <div className='searchform__input-wrapper' noValidate>
                 <img src={searchIcon} alt='search' className='searchform__search-icon' />
-                <input type='text' placeholder='Фильм' required className='searchform__input' />
-                <button type='submit' className='searchform__button link'>Найти</button>
+                <input
+          name='name'
+          className='searchform__input'
+          placeholder='Фильм'
+         value={inputValues.name || ''}
+          onChange={handleChange}
+          type='text'
+          required
+        >
+        </input>
+  
+                <button type='submit' onClick={handleSubmit} className='searchform__button link'>Найти</button>
             </div>
-
-            <div className='searchform__switch'>
-            <label className='switch'>
-            <input type='checkbox'/>
-            <span className='slider round'></span>
-          </label>
-                <p className='searchform__shorts'>Короткометражки</p>
-            </div>
+            <FilterCheckbox toggleShortMovieFilter={toggleShortMovieFilter} />
+            <span className={`search__input-error_hidden ${errorMessage && 'search__input-error'}`}>
+          {errorMessage}
+        </span>
         </form>
     );
 }
