@@ -24,8 +24,8 @@
 * Добавлен и настроен прелоудер.
 * Можно редактировать профиль пользователя — обновленные данные сохраняются на сервере.
 * При логауте  очищается LS и удаляются все стейты.
-
-
+git push origin
+[Код бэкенд части приложения](https://github.com/AntB2142/movies-explorer-api)
 # Макет
 [https://www.figma.com/file/ktXAkoqgxFRTp5tcYy97J6/Diploma-(Copy)?node-id=932%3A3377](https://www.figma.com/file/ktXAkoqgxFRTp5tcYy97J6/Diploma-(Copy)?node-id=932%3A3377)
 
