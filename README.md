@@ -1,5 +1,5 @@
 # Movies Explorer-SPA приложение в котором можно найти фильмы по запросу и сохранить в личном кабинете.
-[Ссылка на проект](https://antb-movies-explorer-frontend.herokuapp.com/)
+[Ссылка на проект](https://movies-explorer-antb.nomoredomains.club)
 
 ![React](https://img.shields.io/badge/-React-61daf8?logo=react&logoColor=black)
 ![HTML5](https://img.shields.io/badge/-HTML5-e34f26?logo=html5&logoColor=white)
